@@ -1,0 +1,184 @@
+.navbar{
+    background: #fff;
+    box-shadow: 0px 2px 23px 1px #3d3d3d;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    padding: 15px 0 15px 0;
+}
+
+.navbar__container{
+    max-width: 1170px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+}
+
+.navbar__title{
+    color: #9243d8;
+    cursor: pointer;
+    font-size: 1.25rem;
+}
+
+.navbar__menubar{
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar__closeMenu{
+    display: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar__mobileMenu{
+    display: none;
+}
+
+.navbar__ContainerManage{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.navbar__shoppingCart{
+    position: relative;
+}
+
+.navbar__quantity{
+    position: absolute;
+    top: -15px;
+    left: 11px;
+    background: #ca1111;
+    color: #fff;
+    padding: 0px 7px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    font-style: normal;
+    justify-content: center;
+}
+
+.navbar__icon{
+    font-size: 1.8rem;
+    color: #9243d8;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.navbar__btns{
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+}
+
+.navbar__SignIn,
+.navbar__SignUp{
+    border: none;
+    outline: none;
+    background: #ff8528;
+    padding: 8px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #fff;
+    margin-right: 10px;
+    transition: all 0.4s ease-in-out;
+}
+
+.navbar__SignIn:hover,
+.navbar__SignUp:hover{
+    box-shadow: 0 0 10px 2px #ff8528;
+}
+
+.MenuMobile{
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.MenuMobileNone{
+    position: fixed;
+    left: -100%;
+    top: 20px;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+}
+
+@media only screen and (max-width: 480px) {
+    .navbar__menubar{
+        display: block;
+    }
+
+    .navbar__closeMenu{
+        display: block;
+    }
+    .navbar__container{
+        padding: 0px 20px;
+    }
+    .navbar__ContainerManage{
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar__menubar{
+        display: block;
+    }
+
+    .navbar__closeMenu{
+        display: block;
+    }
+
+    .navbar__container{
+        padding: 0px 20px !important;
+    }
+
+    .navbar__ContainerManage{
+        display: none;
+    }
+
+    .MenuMobile{
+        position: fixed;
+        display: flex;
+        top: 8.5%;
+        left: 0;
+        flex-direction: column;
+        padding-left: 10px;
+        padding-right: 10px;
+        justify-content: space-between;
+        width: 100%;
+        height: 100vh;
+        background: #eeeeee;
+        transition: all 0.3s ease-in;
+    }
+
+    .navbar__mobileMenu{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .MenuMobile__container{
+        width: 100%;
+        padding: 4px;
+        list-style: none;
+    }
+    
+    .MenuMobile__border{
+        border-bottom: 2px solid #505050;
+    }
+
+    .navbar__SignIn,
+    .navbar__SignUp{
+        width: 100%;
+        margin-top: 10px;
+    }
+
+}
