@@ -5,10 +5,12 @@ import Navbar from './Components/Navbar';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import ProductDetails from './Components/ProductDetails';
 import './App.css';
+import CartContextProvider from './Context/CartContextProvider';
 
 const App = () => {
   return (
     <ProductContextProvider>
+      <CartContextProvider>
         <Navbar/>
         <BrowserRouter>
           <Routes>
@@ -17,6 +19,7 @@ const App = () => {
             <Route path="*" element={<Navigate to="/products"/>}/>
           </Routes>
         </BrowserRouter>
+      </CartContextProvider>
     </ProductContextProvider>
   )
 }

@@ -2,9 +2,6 @@ import React, { useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { ProductsContext } from '../Context/ProductContextProvider';
 import style from './ProductDetails.module.css';
-import { BiMinus } from 'react-icons/bi';
-import { AiOutlinePlus } from 'react-icons/ai';
-import { HiOutlineShoppingCart } from 'react-icons/hi';
 
 const ProductDetails = () => {
     const paramsUrl = useParams();
@@ -23,14 +20,8 @@ const ProductDetails = () => {
                     <span className={style.product__price}>${price}</span>
                 </div>
                 <div className={style.product__ContainerManage}>
-                    <div className={style.product__manage}>
-                        <i className={style.Minu}><BiMinus/></i>
-                        <span className={style.quantity}>0</span>
-                        <i className={style.Plus}><AiOutlinePlus/></i>
-                    </div>
                     <div className={style.product__btns}>
                         <Link to="/products" className={style.btnStore}>Back To Store</Link>
-                        <button className={style.btns}><i className={style.shopIcon}><HiOutlineShoppingCart/></i>Add To Cart</button>
                     </div>
                 </div>
             </div>

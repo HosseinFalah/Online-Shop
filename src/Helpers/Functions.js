@@ -4,4 +4,18 @@ const Shorten = (title) => {
     return newTitle
 }
 
-export {Shorten}
+const checkInCart = (state, id) => {
+    const result = !!state.seletedItems.find(item => item.id === id)
+    return result
+}
+
+const quantityCount = (state, id) => {
+    const QuantityFind = state.seletedItems.findIndex(item => item.id === id)
+    if (QuantityFind === -1) {
+        return false
+    } else {
+        return state.seletedItems[QuantityFind].quantity
+    }
+}
+
+export {Shorten, checkInCart, quantityCount}

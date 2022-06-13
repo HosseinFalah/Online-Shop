@@ -58,6 +58,30 @@
     transition: all 0.4s ease;
 }
 
+.product__btnPlus{
+    outline: none;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    background: #162be5;
+    padding: 8px 20px;
+    box-shadow: 2px 1px 8px 1px #2b00ff;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.product__btnMinus{
+    outline: none;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    background: #162be5;
+    padding: 8px 20px;
+    box-shadow: 2px 1px 8px 1px #2b00ff;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
 @media only screen and (max-width: 480px) {
     .product__btns{
         justify-content: flex-start;
