@@ -1,56 +1,55 @@
-import "./ShopCart.css";
-import {BsTrash, BsPlus} from "react-icons/bs";
-import {BiMinus} from "react-icons/bi";
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
+import { cartContext } from '../Context/CartContextProvider';
+import Cart from '../Shared/Cart';
+import style from "./ShopCart.module.css";
 
 const ShopCart = () => {
+  const { state, dispatch } = useContext(cartContext)
   return (
-    <div className="container">
-      <div className="row">
-        <div className="carts">
-          <div className="card">
-            <div className="cart_header">
+    <div className={style.container}>
+      <div className={style.row}>
+        <div className={style.carts}>
+          <div className={style.card}>
+            <div className={style.cart_header}>
               Cart_Information
             </div>
-            <div className="cart_body">
+            <div className={style.cart_body}>
               {/* Single Item */}
-              <div className="col">
-                <div className="cart_img">
-                  <img src={require('../Asset/Images/71li-ujtlUL._AC_UX679_.jpg')} className="img-fluid" alt="ProductShop" />
-                </div>
-                <div className="cart_desc">
-                  <p><strong>Blue denim shirt</strong></p>
-                  <p>Color: Blue</p>
-                  <p>Size: M</p>
-                  <button className="trash"><BsTrash size={20}/></button>
-                </div>
-                <div className="cart_btnQuantity">
-                  <div className="cart_addQua">
-                    <button className="minus"><BiMinus size={20} fontWeight={600}/></button>
-                    <div>
-                      <input type="number" name="quantity" className="quantityValue" value="1" id="quantity" />
-                    </div>
-                    <button className="plus"><BsPlus size={20}/></button>
-                  </div>
-                  <p className="cart_price">$17.99</p>
-                </div>
+              {state.seletedItems.map(item => <Cart key={item.id} data={item}/>)}
+            </div>
+          </div>
+        </div>
+        {
+          state.itemsCounter > 0 && 
+          <div className={style.details_carts}>
+            <div className={style.cart}>
+              <div className={style.cart_header}>
+                Summry
+              </div>
+              <div className={style.cart_body}>
+                <ul className={style.cart_list}>
+                  <li className={style.cart_link}>Total Price: ${state.total}</li>
+                </ul>
+                <button className={style.btn_warning} onClick={() => dispatch({type: "CLEAR"})}>Clear Product</button>
+                <button className={style.btn_primary} onClick={() => dispatch({type: "CHECKOUT"})}>Go To CheckOut</button>
               </div>
             </div>
           </div>
-        </div>
-        <div className="details_carts">
-          <div className="cart">
-            <div className="cart_header">
-              Summry
-            </div>
-            <div className="cart_body">
-              <ul className="cart_list">
-                <li className="cart_link">Total Price: $10.98</li>
-              </ul>
-              <button className="btn-warning">Clear Product</button>
-              <button className="btn-primary">Go To CheckOut</button>
-            </div>
+        }
+        {
+          state.checkout && <div className={style.checkout}>
+            <h3 className={style.checkout__title}>Checked Out SuccessFully</h3>
+            <Link to="/products" className={style.btn_success}>Buy More</Link>
           </div>
-        </div>
+        }
+
+        {
+          !state.checkout && state.itemsCounter === 0 && <div className={style.clearProduct}>
+            <h3 className={style.ClearProduct__title}>Want to Buy?</h3>
+            <Link to="/products" className={style.btn_success}>Go To Shop</Link>
+          </div>
+        }
       </div>
     </div>
   )
