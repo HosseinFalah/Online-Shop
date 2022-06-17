@@ -1,0 +1,162 @@
+.container{
+    width: 100%;
+    max-width: 1170px;
+    margin: auto;
+    height: 100vh;
+    padding-top: 6rem;
+}
+
+.row{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.carts{
+    flex: 1 1 auto;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.5rem;
+    transition: all 0.5s ease;
+}
+
+.card:hover{
+    box-shadow: 0px 0px 10px 2px #999999;
+}
+
+.cart_header{
+    padding: 0.9rem 0.9rem;
+    font-size: 22px;
+    font-weight: 500;
+    border-bottom: 2px solid #f5f5f5;
+}
+
+.cart_body{
+    padding: 1rem 1rem;
+}
+
+.details_carts{
+    flex: auto;
+}
+
+.cart_body{
+    flex: 1 1 auto;
+}
+
+.col{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #b7b7b7;
+}
+
+.img-fluid{
+    width: 135px;
+    height: 150px;
+    object-fit: contain;
+}
+
+.cart_addQua{
+    max-width: 330px;
+    display: flex;
+}
+
+.trash{
+    border: none;
+    outline: none;
+    background: #F93154;
+    color: #fff;
+    padding: 0.5rem 0.5rem;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.trash:hover{
+    box-shadow: 0px 0px 5px 2px #ff2045;
+}
+
+.minus,
+.plus{
+    border: none;
+    outline: none;
+    background: #0D58D3;
+    color: #fff;
+    padding: 0.5rem 0.7rem;
+    border-radius: 10px;
+    margin: 0 0.5rem;
+    cursor: pointer;
+}
+
+.quantityValue{
+    width: 4rem;
+    height: 2.4rem;
+    border-radius: 10px;
+    border: 1px solid #aeaeae;
+}
+
+.quantityValue:focus{
+    outline: none;
+}
+
+.cart_price{
+    text-align: center;
+}
+
+.details_carts{
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.btn-primary{
+    border: none;
+    outline: none;
+    background: #0C56D0;
+    color: #fff;
+    padding: 0.8rem 0;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.btn-primary:hover{
+    box-shadow: 0px 0px 10px 2px #0C56D0;
+    box-shadow: 1px;
+}
+
+.btn-warning{
+    border: none;
+    outline: none;
+    background: #ff7307;
+    color: #fff;
+    padding: 0.8rem 0;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    margin-bottom: 10px;
+}
+
+.btn-warning:hover{
+    box-shadow: 0px 0px 10px 2px #ff7307;
+}
+
+.cart_body{
+    padding: 20px 25px;
+}
+
+.cart_list{
+    list-style: none;
+}
+
+.cart_link{
+    padding: 10px 10px;
+}
